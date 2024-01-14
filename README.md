@@ -1,7 +1,11 @@
 # Solarized Neovim
 
-This aims to be a complete port [vim-solarized8](https://github.com/lifepillar/vim-solarized8) with support for lua
+Initially this aimed to be a complete port [vim-solarized8](https://github.com/lifepillar/vim-solarized8) with support for lua
 plugins, LSP and Treesitter for neovim 0.5.
+
+Then the colors in solarized-normal colorscheme that didn't match what's in
+https://github.com/altercation/solarized/blob/master/vim-colors-solarized/colors/solarized.vim
+were changed to match.
 
 ## NOTE
 Also added 8 bit color support.(Can't be a complete port if the theme isn't accessible for all neovim users.)

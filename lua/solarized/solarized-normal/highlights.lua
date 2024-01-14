@@ -19,14 +19,14 @@ g.colors_name = 'solarized'
 function M.load_syntax(colors)
 	local syntax = {}
 
-	syntax['Normal'] = {fg=colors.base1,bg=utils.termtrans(colors.base03)}
+	syntax['Normal'] = {fg=colors.base0,bg=utils.termtrans(colors.back)}
 	syntax['FoldColumn'] = {fg=colors.base0,bg=utils.termtrans(colors.base02)}
 	syntax['Folded'] = {fg=colors.base0,bg=utils.termtrans(colors.base02),guisp=colors.base03,style='bold'}
 	syntax['Terminal'] = syntax['Normal']
 	syntax['ToolbarButton'] = {fg=colors.base1,bg=utils.termtrans(colors.base02),style='bold'}
 	syntax['ToolbarLine'] = {fg=colors.none,bg=utils.termtrans(colors.base02)}
 	syntax['CursorLine'] = {fg=colors.none,bg=utils.termtrans(colors.base02)}
-	syntax['LineNr'] = {fg=colors.base00,bg=utils.termtrans(colors.base02)}
+	-- syntax['LineNr'] = {fg=colors.base00,bg=utils.termtrans(colors.base02)}
 	syntax['FloatBorder'] = {fg=colors.base1, bg=colors.none}
 
 	if g.solarized_diffmode == 'low' then
@@ -61,12 +61,12 @@ function M.load_syntax(colors)
 		syntax['TabLineFill'] = {fg=colors.base01, bg=colors.base02}
 		syntax['VertSplit'] = {fg=colors.base02, bg=colors.none}
 	else
-		syntax['StatusLine'] = {fg=colors.base0,bg=colors.base02,style='reverse'}
-		syntax['StatusLineNC'] = {fg=colors.base01,bg=colors.base02,style='reverse'}
-		syntax['TabLine'] = {fg=colors.base01,bg=colors.base02,style='reverse'}
-		syntax['TabLineFill'] = {fg=colors.base01,bg=colors.base02,style='reverse'}
-		syntax['TabLineSel'] = {fg=colors.base0,bg=colors.base02,style='reverse'}
-		syntax['VertSplit'] = {fg=colors.base01}
+		syntax['StatusLine'] = {fg=colors.base1,bg=colors.base02,style='reverse'}
+		syntax['StatusLineNC'] = {fg=colors.base00,bg=colors.base02,style='reverse'}
+		syntax['TabLine'] = {fg=colors.base0,bg=colors.base02,style='reverse'}
+		syntax['TabLineFill'] = {fg=colors.base0,bg=colors.base02,style='reverse'}
+		syntax['TabLineSel'] = {fg=colors.base01,bg=colors.base2,style='reverse'}
+		syntax['VertSplit'] = {fg=colors.base00,bg=colors.base02}
 	end
 
 	if g.solarized_visibility == 'high' then
@@ -91,13 +91,13 @@ function M.load_syntax(colors)
 		syntax['Title'] = {fg=colors.base01,style='bold'}
 	else
 		syntax['CursorLineNr'] = {fg=colors.base0,bg=colors.base02,style='bold'}
-		syntax['LineNr'] = {fg=colors.base00,bg=colors.base02,}
+		syntax['LineNr'] = {fg=colors.base01,bg=colors.base02,}
 		syntax['NonText'] = {fg=colors.base00,style='bold'}
 		syntax['SpecialKey'] = {fg=colors.base00,bg=colors.base02,style='bold'}
-		syntax['SpellBad'] = {fg=colors.violet,guisp=colors.violet,style='undercurl'}
-		syntax['SpellCap'] = {fg=colors.violet,guisp=colors.violet,style='undercurl'}
-		syntax['SpellLocal'] = {fg=colors.yellow,guisp=colors.yellow,style='undercurl'}
-		syntax['SpellRare'] = {fg=colors.cyan,guisp=colors.cyan,style='undercurl'}
+		syntax['SpellBad'] = {fg=colors.none,guisp=colors.violet,style='undercurl'}
+		syntax['SpellCap'] = {fg=colors.none,guisp=colors.violet,style='undercurl'}
+		syntax['SpellLocal'] = {fg=colors.none,guisp=colors.yellow,style='undercurl'}
+		syntax['SpellRare'] = {fg=colors.none,guisp=colors.cyan,style='undercurl'}
 		syntax['Title'] = {fg=colors.orange,style='bold'}
 	end
 
@@ -108,19 +108,19 @@ function M.load_syntax(colors)
 	syntax['EndOfBuffer'] = {fg=colors.none,ctermfg=colors.none,ctermbg=colors.none}
 	syntax['ErrorMsg'] = {fg=colors.red,bg=colors.err_bg,style='reverse'}
 	syntax['IncSearch'] = {fg=colors.orange,style='standout'}
-	syntax['MatchParen'] = {fg=colors.base3,bg=colors.base02,style='bold'}
+	syntax['MatchParen'] = {fg=colors.red,bg=colors.base01,style='bold'}
 	syntax['ModeMsg'] = {fg=colors.blue}
 	syntax['MoreMsg'] = {fg=colors.blue}
-	syntax['Pmenu'] = {fg=colors.base1,bg=colors.base02}
-	syntax['PmenuSbar'] = {fg=colors.none,bg=colors.base01}
-	syntax['PmenuSel'] = {fg=colors.base2,bg=colors.base00}
-	syntax['PmenuThumb'] = {fg=colors.none,bg=colors.base0}
+	syntax['Pmenu'] = {fg=colors.base0,bg=colors.base02}
+	syntax['PmenuSbar'] = {fg=colors.base2,bg=colors.base0}
+	syntax['PmenuSel'] = {fg=colors.base01,bg=colors.base2}
+	syntax['PmenuThumb'] = {fg=colors.base0,bg=colors.base03}
 	syntax['Question'] = {fg=colors.cyan,style='bold'}
 	syntax['Search'] = {fg=colors.yellow,style='reverse'}
 	syntax['SignColumn'] = {fg=colors.base0}
 	syntax['Visual'] = {fg=colors.base01,bg=colors.base03,style='reverse'}
 	syntax['VisualNOS'] = {fg=colors.none,bg=colors.base02,style='reverse'}
-	syntax['WarningMsg'] = {fg=colors.orange,style='bold'}
+	syntax['WarningMsg'] = {fg=colors.red,style='bold'}
 	syntax['WildMenu'] = {fg=colors.base2,bg=colors.base02,style='reverse'}
 	syntax['Comment'] = {fg=colors.base01,style=utils.italics()}
 	syntax['Constant'] = {fg=colors.cyan}
@@ -129,7 +129,7 @@ function M.load_syntax(colors)
 	syntax['Identifier'] = {fg=colors.blue}
 	syntax['Ignore'] = {fg=colors.none,ctermfg=colors.none,ctermbg=colors.none}
 	syntax['PreProc'] = {fg=colors.orange}
-	syntax['Special'] = {fg=colors.orange}
+	syntax['Special'] = {fg=colors.red}
 	syntax['Statement'] = {fg=colors.green}
 	syntax['Todo'] = {fg=colors.magenta,style='bold'}
 	syntax['Type'] = {fg=colors.yellow}
